@@ -1,0 +1,9 @@
+from flask import *
+from public import*
+from admin import *
+
+
+app=Flask(__name__)
+app.register_blueprint(public)
+app.register_blueprint(admin)
+app.run(port=5002,debug=True)

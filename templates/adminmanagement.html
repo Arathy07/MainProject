@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>doctor_id</th>
+            <th>fname</th>
+            <th>lname</th>
+            <th>place</th>
+            <th>email</th>
+            <th>designation</th>
+            <th>status</th>
+            
+        </tr>
+       {% for i in data['user']%}
+        <tr>
+            <td>{{i['doctor_id']}}</td>
+            <td>{{i['fname']}}</td>
+            <td>{{i['lname']}}</td>
+            <td>{{i['place']}}</td>
+            <td>{{i['email']}}</td>
+            <td>{{i['designation']}}</td>
+            <td>{{i['status']}}</td>
+            <td><a href="?action=Approve&id={{i['doctor_id']}}">Approve</a></td>
+            <td><a href="?action=Reject&id={{i['doctor_id']}}">Reject</a></td>
+
+
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</body>
+</html>
