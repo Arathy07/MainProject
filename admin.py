@@ -45,6 +45,7 @@ def diseasemanagement():
         uploadimage=request.form['image']
         qry1="insert into diseases values(null,'%s','%s','%s')"%(Diseasename, description,uploadimage)
         insert(qry1)
+        return '''<script>alert("Add successfull");window.locatioin="/registration"</script>'''
 
     if 'action'in request.args:
         action=request.args['action']
@@ -54,6 +55,7 @@ def diseasemanagement():
         if action=='delete':
             qry2="delete from diseases where disease_id='%s'"%(id)
             delete(qry2)
+            return '''<script>alert("Delection successfull");window.locatioin="/registration"</script>'''
         if action=='update':
              qry6="select * from diseases where disease_id='%s'"%(id)
              data['up']=select(qry6)
@@ -63,6 +65,7 @@ def diseasemanagement():
                  uploadimage=request.form['image']
                  q="update diseases set disease_name='%s',description='%s',image='%s' where disease_id='%s'"%( Diseasename,description,uploadimage,id)
                  update(q)
+                 return '''<script>alert("update successfull");window.locatioin="/registration"</script>'''
                     
         
 
@@ -88,7 +91,7 @@ def viewfeedback():
 
 
 
-@admin.route("/viewreviews",methods=['get','post'])
+@admin.route("/viewdoctorreviews",methods=['get','post'])
 def viewreview():
     data={}
     qry8="select * from review"
