@@ -6,6 +6,33 @@
     <title>Document</title>
 </head>
 <body>
+
+    {%if data['up']%}
+    <h1>Add Diseases</h1>
+    <form action="" method="post">
+        <table>
+            <tr>
+                <th>Disease name</th>
+                <td><input type="text" name="Diseasename" value="{{data['up'][0]['disease_name']}}"></td>
+            </tr>
+            <tr>
+                <th>description</th>
+                <td><input type="text" name="description" value="{{data['up'][0]['description']}}"></td>
+            </tr>
+            <tr>
+                <th>upload image</th>
+                <td><input type="file" name="image" value="{{data['up'][0]['image']}}"></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2"><input type="submit" name="update" value="submit"></td>
+            </tr>
+        </table>
+
+    </form>
+
+
+    {%else%}
+
     <h1>Add Diseases</h1>
     <form action="" method="post">
         <table>
@@ -25,6 +52,30 @@
                 <td align="center" colspan="2"><input type="submit" name="submit" value="submit"></td>
             </tr>
         </table>
+
     </form>
+    <table>
+        <tr>
+            <th>disease_name</th>
+            <th>description</th>
+            <th>image</th>
+            
+            
+        </tr>
+       {% for i in data['user']%}
+        <tr>
+            <td>{{i['disease_name']}}</td>
+            <td>{{i['description']}}</td>
+            <td>{{i['image']}}</td>
+            <td><a href="?action=update&id={{i['disease_id']}}">update</a></td>
+            <td><a href="?action=delete&id={{i['disease_id']}}">Delete</a></td>
+
+
+        </tr>
+        {%endfor%}
+    </table>
+    {%endif%}
+
+   
 </body>
 </html>
