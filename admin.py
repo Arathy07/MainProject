@@ -77,5 +77,25 @@ def viewuser():
     return render_template("viewusers.html",data=data)
 
 
+@admin.route("/viewfeedback",methods=['get','post'])
+def viewfeedback():
+    data={}
+    qry9="select * from feedback"
+    data['user']=select(qry9)
+   
+
+    return render_template("viewfeedback.html",data=data)
+
+
+
+@admin.route("/viewreviews",methods=['get','post'])
+def viewreview():
+    data={}
+    qry8="select * from review"
+    data['user']=select(qry8)
+   
+
+    return render_template("viewreview.html",data=data)
+
 
 
