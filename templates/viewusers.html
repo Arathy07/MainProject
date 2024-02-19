@@ -20,15 +20,14 @@
         </tr>
        {% for i in data['user']%}
         <tr>
-            <td>{{i['doctor_id']}}</td>
+            <td>{{i['patient_id']}}</td>
             <td>{{i['fname']}}</td>
             <td>{{i['lname']}}</td>
             <td>{{i['place']}}</td>
             <td>{{i['email']}}</td>
-            <td>{{i['designation']}}</td>
-            <td>{{i['status']}}</td>
-            <td><a href="?action=Approve&id={{i['doctor_id']}}">Approve</a></td>
-            <td><a href="?action=Reject&id={{i['doctor_id']}}">Reject</a></td>
+            <td>{{i['age']}}</td>
+            <td>{{i['phone']}}</td>
+           
 
 
         </tr>

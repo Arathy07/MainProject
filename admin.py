@@ -67,3 +67,15 @@ def diseasemanagement():
         
 
     return render_template("diseasemanagement.html",data=data)
+@admin.route("/viewuser",methods=['get','post'])
+def viewuser():
+    data={}
+    qry2="select * from patient"
+    data['user']=select(qry2)
+   
+
+    return render_template("viewusers.html",data=data)
+
+
+
+
