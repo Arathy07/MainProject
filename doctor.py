@@ -109,6 +109,8 @@ def sendreview():
         return ''' <script>alert("send successfully");window.location="/viewcomplaints"</script>'''
 
 
+    return render_template("sendreview.html")
+
 
 
 
