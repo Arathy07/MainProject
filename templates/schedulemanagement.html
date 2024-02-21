@@ -5,7 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body><center><h1>Schedule Management</h1></center>
+<body>
+
+
+    {%if data['up']%}
+    <h1>UPDATE SCHEDULE</h1>
+    <form action="" method="post">
+        <table>
+            <tr>
+                <th>Start date</th>
+                <td><input type="text" name="startdate" value="{{data['up'][0]['disease_name']}}"></td>
+            </tr>
+            <tr>
+                <th>end date</th>
+                <td><input type="text" name="enddate" value="{{data['up'][0]['description']}}"></td>
+            </tr>
+            <tr>
+                <th>start time</th>
+                <td><input type="file" name="starttime" value="{{data['up'][0]['image']}}"></td>
+            </tr>
+            <tr>
+                <th>end time</th>
+                <td><input type="file" name="endtime" value="{{data['up'][0]['image']}}"></td>
+            </tr>
+
+            <tr>
+                <td align="center" colspan="2"><input type="submit" name="update" value="submit"></td>
+            </tr>
+        </table>
+
+    </form>
+
+
+    {%else%}
+
+
     <form action="" method="post">
         <table>
            <tr>
@@ -30,5 +64,28 @@
 
     </table>
     </form>
+    <table>
+        <tr>
+            <th>startdate</th>
+            <th>enddate</th>
+            <th>starttime</th>
+            <th>endtime</th>
+            
+            
+        </tr>
+       {% for i in data['user']%}
+        <tr>
+            <td>{{i['startdate']}}</td>
+            <td>{{i['enddate']}}</td>
+            <td>{{i['starttime']}}</td>
+            <td>{{i['endtime']}}</td>
+            <td><a href="?action=update&id={{i['schedule_id']}}">update</a></td>
+            <td><a href="?action=delete&id={{i['schedule_id']}}">Delete</a></td>
+
+
+        </tr>
+        {%endfor%}
+    </table>
+    {%endif%}      
 </body>
 </html>

@@ -52,6 +52,8 @@ def viewdisease():
 @doctor.route("/schedulemanagement",methods=['get','post'])
 def schedulemanagement():
     data={}
+    qry1="select * from doctors_schedule"
+    data['user']=select(qry1)
     if 'submit' in request.form:
         sdate=request.form['startdate']
         edate=request.form['enddate']
@@ -59,6 +61,33 @@ def schedulemanagement():
         etime=request.form['endtime']
         qry1="insert into doctors_schedule values(null,'%s','%s','%s','%s','%s')"%(session['lid'],sdate,edate,stime,etime)
         insert(qry1)
+    if 'action'in request.args:
+        action=request.args['action']
+        id=request.args['id']
+
+
+        if action=='delete':
+            qry2="delete from doctors_schedule where schedule_id='%s'"%(id)
+            delete(qry2)
+            return '''<script>alert("Delection successfull");window.locatioin="/registration"</script>'''
+        if action=='update':
+             qry6="select * from doctors_schedule where schedule_id='%s'"%(id)
+             data['up']=select(qry6)
+             if 'update' in request.form:
+                 sdate=request.form['startdate']
+                 edate=request.form['enddate']
+                 stime=request.form['starttime']
+                 etime=request.form['endtime']
+                 q="update doctors_schedule set startdate='%s',enddate='%s',starttime='%s',endtime='%s' where schedule_id='%s'"%(sdate,edate,stime,etime,id)
+                 update(q)
+                 return '''<script>alert("update successfull");window.locatioin="/registration"</script>'''
+
+
+
+
+
+
+
     return render_template("schedulemanagement.html",data=data)
 
 
