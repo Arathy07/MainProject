@@ -6,13 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <table>
+    <table border="2">
         <tr>
             <th>doctor_id</th>
             <th>fname</th>
             <th>lname</th>
             <th>place</th>
             <th>email</th>
+            <th>phone</th>
             <th>designation</th>
             <th>status</th>
             
@@ -24,10 +25,11 @@
             <td>{{i['lname']}}</td>
             <td>{{i['place']}}</td>
             <td>{{i['email']}}</td>
+            <td>{{i['phone']}}</td>
             <td>{{i['designation']}}</td>
             <td>{{i['status']}}</td>
-            <td><a href="?action=Approve&id={{i['doctor_id']}}">Approve</a></td>
-            <td><a href="?action=Reject&id={{i['doctor_id']}}">Reject</a></td>
+            <td><a href="?action=Approve&id={{i['login_id']}}">Approve</a></td>
+            <td><a href="?action=Reject&id={{i['login_id']}}">Reject</a></td>
 
 
         </tr>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><h1>Diseases</h1>
+    <table>
+        <tr>
+            <th>disease_id</th>
+            <th>disease_name</th>
+            <th>description</th>
+            <th>image</th>
+            
+            
+        </tr>
+       {% for i in data['user']%}
+        <tr>
+            <td>{{i['disease_id']}}</td>
+            <td>{{i['disease_name']}}</td>
+            <td>{{i['description']}}</td>
+            <td>{{i['image']}}</td>
+            
+           
+
+
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>

@@ -20,11 +20,17 @@ def adminmanagement():
     else:
         action=None
     if action=='Reject':
-        qry="update doctor set status='Rejected' where doctor_id='%s'"%(id)
+        qry="update doctor set status='Rejected' where login_id='%s'"%(id)
         update(qry)
     if action=='Approve':
-        qry1="update doctor set status='Approved' where doctor_id='%s'"%(id)
+        qry1="update doctor set status='Approved' where login_id='%s'"%(id)
         update(qry1)
+        qry6="update login set usertype='doctor' where login_id='%s'"%(id)
+        update(qry6)
+
+
+
+
     
 
 

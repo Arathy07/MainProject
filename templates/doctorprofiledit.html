@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     {%if data['up']%}
+        <h1>EDIT PROFILE</h1>
+        <form action="" method="post">
+            <table>
+                <tr>
+                    <th>FIRSTNAME</th>
+                    <td><input type="text" name="fname" value="{{data['up'][0]['fname']}}"></td>
+                </tr>
+                <tr>
+                    <th>LASTNAME</th>
+                    <td><input type="text" name="lname" value="{{data['up'][0]['lname']}}"></td>
+                </tr>
+                <tr>
+                    <th>PLACE</th>
+                    <td><input type="text" name="place" value="{{data['up'][0]['place']}}"></td>
+                </tr>
+                <tr>
+                    <th>EMAIL</th>
+                    <td><input type="email" name="email" value="{{data['up'][0]['email']}}"></td>
+                </tr>
+                <tr>
+                    <th>PHONE</th>
+                    <td><input type="number" name="phone" value="{{data['up'][0]['phone']}}"></td>
+                </tr>
+                <tr>
+                    <th>Designation</th>
+                    <td><input type="number" name="designation" value="{{data['up'][0]['designation']}}"></td>
+                </tr>
+
+
+                <tr>
+                    <td align="center" colspan="2"><input type="submit" name="update" value="submit"></td>
+                </tr>
+            </table>
+    
+        </form>
+    
+    
+        {%else%}
+    
+
+
+   <h1>Doctor Profile</h1>
+   
+   <table border="2">
+    <tr>
+        <th>fname</th>
+        <th>lname</th>
+        <th>place</th>
+        <th>phone</th>
+        <th>email</th>
+        <th>designation</th>
+        
+
+        
+        
+    </tr>
+   {% for i in data['user']%}
+    <tr>
+        <td>{{i['fname']}}</td>
+        <td>{{i['lname']}}</td>
+        <td>{{i['place']}}</td>
+        <td>{{i['phone']}}</td>
+        <td>{{i['email']}}</td>
+        <td>{{i['designation']}}</td>
+        <td><a href="?action=update&id={{i['doctor_id']}}">update</a></td>
+        
+
+        
+
+
+        
+
+        
+       
+
+
+    </tr>
+    {%endfor%}
+</table>
+{%endif%}
+</body>
+</html>

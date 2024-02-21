@@ -17,7 +17,13 @@ def login():
         print(res)
         if res[0]['usertype']=='admin':
             return redirect(url_for('admin.adminhome'))
-        # elif res[0]['usertype']=='staff':
-        #     return redirect(url_for('patient.patienthome'))
-
+        elif res[0]['usertype']=='doctor':
+            return redirect(url_for('doctor.doctorhome'))
+        
     return render_template("login.html")
+
+
+
+    
+        
+
