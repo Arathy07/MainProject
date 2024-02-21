@@ -7,5 +7,31 @@
 </head>
 <body>
     <h1>PATIENT APPOINTMENT</h1>
+    <table>
+        <tr>
+            <th>sechedule_id</th>
+            <th>user_id</th>
+            <th>reason</th>
+            <th>date</th>
+            <th>status</th>
+            
+            
+        </tr>
+       {% for i in data['user']%}
+        <tr>
+            <td>{{i['sechedule_id']}}</td>
+            <td>{{i['user_id']}}</td>
+            <td>{{i['reason']}}</td>
+            <td>{{i['date']}}</td>
+            <td>{{i['status']}}</td>
+            
+           
+
+
+        </tr>
+        {%endfor%}
+    </table>
+
+
 </body>
 </html>

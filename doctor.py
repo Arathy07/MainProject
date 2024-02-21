@@ -83,12 +83,31 @@ def schedulemanagement():
                  return '''<script>alert("update successfull");window.locatioin="/registration"</script>'''
 
 
-
-
-
-
-
     return render_template("schedulemanagement.html",data=data)
+
+@doctor.route("/patientappointment",methods=['get','post'])
+def patientappointment():
+    data={}
+    qry8="select * from doctor_appointment"
+    data['user']=select(qry8)
+   
+
+    return render_template("viewpatientappointment.html",data=data)
+
+
+@doctor.route("/sendreview",methods=['get','post'])
+def sendreview():
+    id=request.args['id']
+    if 'submit' in request.form:
+        review=request.form['rep']
+        rateing=request.form['rate']
+        date=request.form['date']
+       
+
+        qry="update review set review ='%s',rating='%s',date='%s' where review_id='%s'"%(review,rateing,date,id)
+        update(qry)
+        return ''' <script>alert("send successfully");window.location="/viewcomplaints"</script>'''
+
 
 
 
