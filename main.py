@@ -5,6 +5,7 @@ from doctor import *
 
 
 app=Flask(__name__)
+app.secret_key="khhfyjgu"
 app.register_blueprint(public)
 app.register_blueprint(admin)
 app.register_blueprint(doctor)

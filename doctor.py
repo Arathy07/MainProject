@@ -49,6 +49,20 @@ def viewdisease():
 
     return render_template("viewdisease.html",data=data)
 
+@doctor.route("/schedulemanagement",methods=['get','post'])
+def schedulemanagement():
+    data={}
+    if 'submit' in request.form:
+        sdate=request.form['startdate']
+        edate=request.form['enddate']
+        stime=request.form['starttime']
+        etime=request.form['endtime']
+        qry1="insert into doctors_schedule values(null,'%s','%s','%s','%s','%s')"%(session['lid'],sdate,edate,stime,etime)
+        insert(qry1)
+    return render_template("schedulemanagement.html",data=data)
+
+
+
 
 
 @doctor.route("/doctor",methods=['get','post'])
