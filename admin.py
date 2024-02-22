@@ -22,6 +22,9 @@ def adminmanagement():
     if action=='Reject':
         qry="update doctor set status='Rejected' where login_id='%s'"%(id)
         update(qry)
+        qry9="update login set usertype='pending' where login_id='%s'"%(id)
+        update(qry9)
+
     if action=='Approve':
         qry1="update doctor set status='Approved' where login_id='%s'"%(id)
         update(qry1)
@@ -106,5 +109,41 @@ def viewreview():
 
     return render_template("viewreview.html",data=data)
 
+
+
+@admin.route("/symptommanagement",methods=['get','post'])
+def symptommanagement():
+    data={}
+    qry3="select *  from symptom"
+    data['user']=select(qry3)
+    if 'submit' in request.form:
+        symptomname=request.form['name']
+        description=request.form['des']
+        
+        qry1="insert into symptom values(null,'%s','%s')"%(symptomname,description)
+        insert(qry1)
+        return '''<script>alert("Add successfull");window.locatioin="/registration"</script>'''
+    
+    if 'action'in request.args:
+        action=request.args['action']
+        id=request.args['id']
+
+
+        if action=='delete':
+            qry2="delete from symptom where symptom_id='%s'"%(id)
+            delete(qry2)
+
+        if action=='update':
+             qry6="select * from symptom where symptom_id='%s'"%(id)
+             data['up']=select(qry6)
+             if 'update' in request.form:
+                 sname=request.form['name']
+                 description=request.form['des']
+                 q="update diseases set symptom_name='%s',symptom_description='%s' where symptom_id='%s'"%( sname,description,id)
+                 update(q)
+                 return '''<script>alert("update successfull");window.locatioin="/registration"</script>'''
+                    
+    
+    return render_template("symptom.html",data=data)
 
 

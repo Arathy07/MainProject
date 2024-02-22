@@ -97,15 +97,14 @@ def patientappointment():
 
 @doctor.route("/sendreview",methods=['get','post'])
 def sendreview():
-    id=request.args['id']
     if 'submit' in request.form:
-        review=request.form['rep']
-        rateing=request.form['rate']
-        date=request.form['date']
+        review=request.form['des']
+        rateing=request.form['rateing']
+    
        
 
-        qry="update review set review ='%s',rating='%s',date='%s' where review_id='%s'"%(review,rateing,date,id)
-        update(qry)
+        qry1="insert into review values(null,'%s','%s','%s',CURDATE())"%(session['lid'],review,rateing)
+        insert(qry1)
         return ''' <script>alert("send successfully");window.location="/viewcomplaints"</script>'''
 
 
@@ -136,6 +135,8 @@ def doctorregistration():
         
         
         return '''<script>alert("Account created successfully");window.locatioin="/login"</script>'''
+    
+    
    
 
     return render_template("doctorregistration.html",data=data)

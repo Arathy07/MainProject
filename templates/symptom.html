@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%if data['up']%}
+
+    <h1>SYMPTOMS</h1>
+    <form action="" method="post">
+        <table>
+            <tr>
+                <th>Symptoms name</th>
+                <td><input type="text" name="name" value="{{data['up'][0]['symptom_name']}}"></td>
+            </tr>
+            <tr>
+                <th>description</th>
+                <td><textarea name="des" id="{{data['up'][0]['symptom_description']}}" cols="20" rows="10" ></textarea></td>
+                
+            </tr>
+        </table>
+    </form>
+
+
+
+    {%else%}
+    
+    
+    
+    <h1>SYMPTOMS</h1>
+    <form action="" method="post">
+        <table>
+            
+        <tr>
+            <th>SYMPTOM NAME</th>
+            <td><input type="text" name="name"></td>
+            </tr>
+    <tr>
+        <th>DESCRIPTION</th>
+        <td><textarea name="des" id="" cols="20" rows="10"></textarea></td>
+       
+    </tr>
+    <td align="center" colspan="2"><input type="submit" name="submit" value="submit"></td>
+    </table>
+    </form>
+    <table>
+        <tr>
+            <th>symptom_name</th>
+            <th>symptom_description</th>
+            
+            
+            
+        </tr>
+       {% for i in data['user']%}
+        <tr>
+            <td>{{i['symptom_name']}}</td>
+            <td>{{i['symptom_description']}}</td>
+            <td><a href="?action=update&id={{i['symptom_id']}}">update</a></td>
+            <td><a href="?action=delete&id={{i['symptom_id']}}">Delete</a></td>
+
+
+        </tr>
+        {%endfor%}
+    </table>
+    {%endif%}
+
+</body>
+</html>
