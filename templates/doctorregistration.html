@@ -1,3 +1,5 @@
+<!-- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    <center>
     <h1>Account creation</h1>
     <form action="" method="post">
         <table>
@@ -51,6 +54,280 @@
             </table>
             </form>
 
+        </center>
+
 </body>
 </html>
+ -->
+ <!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Registration Form</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form">
+      <div class="heading">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b6b9b111947483.600d77d8a07ed.gif" alt="" class="logo">
+        <h1>Registration Form</h1>
+      </div>
+      <div class="wrap">
+        <div class="f1">
+          <label>First Name</label>
+          <input type="text">
+          <span class="focus-input"></span>
+        </div>
+        <div class="f2">
+          <label>Second Name</label>
+          <input type="text">
+          <span class="focus-input"></span>
+        </div>
+      </div>
+
+      <div class="wrap2">
+        <label>Username</label>
+        <input type="text">
+        <span class="focus-input"></span>
+      </div>
+
+      <div class="wrap2">
+        <label>E-Mail</label>
+        <input type="text">
+        <span class="focus-input"></span>
+      </div>
+
+      <div class="wrap2">
+        <label>Phone Number</label>
+        <input type="number">
+        <span class="focus-input"></span>
+      </div>
+
+      <button class="btn">Register</button>
+
+    </div>
+
+    <div class="image">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/28f133111947483.600bc9033b832.png" class="img" alt="">
+    </div>
+
+  </div>
+</body>
+
+</html>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ced3e7;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* input {
+  outline: none;
+  border: none;
+} */
+.heading {
+  width: 80%;
+}
+.heading h1 {
+  font-size: 2rem;
+  color: #412277;
+  text-align: center;
+}
+.logo {
+  width: 200px;
+  /*   margin-left: -70px; */
+}
+.container {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 90vh;
+  background: #f8f9fb;
+  /*   display: flex; */
+  display: block;
+  box-shadow: 5px 10px 38px rgba(0, 0, 0, 0.2);
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background: whitesmoke;
+  padding-bottom: 50px;
+}
+.image {
+  /*   width: 15%;
+  display:none; */
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wrap2 {
+  width: 80%;
+  position: relative;
+  border-bottom: 2px solid #b2b2b2;
+  margin-bottom: 13px;
+}
+.wrap {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+}
+.f1 {
+  border-bottom: 2px solid #b2b2b2;
+  width: 40%;
+  position: relative;
+}
+.f2 {
+  border-bottom: 2px solid #b2b2b2;
+  margin-left: auto;
+  width: 50%;
+  position: relative;
+}
+label {
+  font-size: 12px;
+  color: #676768;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  min-height: 25px;
+  border-bottom: none;
+  padding: 15px 0px;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  background: transparent;
+  color: #0f0f0f;
+  font-weight: 500;
+  /*   padding: 10px 0px; */
+  outline: none;
+  border: none;
+}
+
+.btn {
+  margin-top: 20px;
+  width: 200px;
+  height: 50px;
+  border-radius: 40px;
+  outline: none;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  background: #445a94;
+  color: #fff;
+  box-shadow: 8px 10px 30px rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
+}
+.btn:hover {
+  background: #4b2888;
+  color: #fff;
+}
+
+.focus-input {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.focus-input:before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  transition: all 0.6s;
+  background: #412277;
+}
+input:focus + .focus-input:before {
+  width: 100%;
+}
+.has-val.input + .focus-input2:before {
+  width: 100%;
+}
+input[type="number"] {
+  overflow: hidden;
+}
+
+/*************  RESPONSIVE **********/
+
+/*   @media only screen and (max-width: 360px), only screen and (max-device-width: 360px) {
+    .image{
+      display: none !important;
+    }
+  } */
+@media (min-width: 600px)
+/*   ,
+  only screen and (min-device-width: 300px),
+  only screen and (min-width: 300px)  */
+{
+  .container {
+    width: 80%;
+    display: flex;
+  }
+  .form {
+    width: 50%;
+  }
+  .image {
+    display: block;
+    width: 50%;
+  }
+}
+/* @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  .container {
+    width: 100%;
+    height: 100vh !important;
+    position: static;
+    transform: translate(0, 0);
+  }
+  .wrap{display: block;}
+  .f1,.f2{
+    width: 100%;
+  }
+  .image {
+    display: none;
+  }
+  .form{
+    width: 100%;
+  }
+} */
+
+/* @media (max-width: 1000px) {
+  .image {
+    display: none;
+  }
+  .container {
+    width: 100%;
+  }
+}
+ */
+
+
+</style>
+  
