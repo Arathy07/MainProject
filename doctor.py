@@ -33,7 +33,7 @@ def editprofile():
 
                  q="update doctor set fname='%s',lname='%s',place='%s',email='%s',phone='%s',designation='%s'where doctor_id='%s'"%(fname,lname,place,email,phone,designation,id)
                  update(q)
-                 return '''<script>alert("update successfull");window.locatioin="/registration"</script>'''
+                 return '''<script>alert("update successfull");window.location="/registration"</script>'''
 
 
    
@@ -80,7 +80,7 @@ def schedulemanagement():
                  etime=request.form['endtime']
                  q="update doctors_schedule set startdate='%s',enddate='%s',starttime='%s',endtime='%s' where schedule_id='%s'"%(sdate,edate,stime,etime,id)
                  update(q)
-                 return '''<script>alert("update successfull");window.locatioin="/registration"</script>'''
+                 return '''<script>alert("update successfull");window.location="/registration"</script>'''
 
 
     return render_template("schedulemanagement.html",data=data)
@@ -134,7 +134,7 @@ def doctorregistration():
         insert(qry1)
         
         
-        return '''<script>alert("Account created successfully");window.locatioin="/login"</script>'''
+        return '''<script>alert("Account created successfully");window.location="/"</script>'''
     
     
    

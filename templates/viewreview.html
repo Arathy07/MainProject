@@ -1,3 +1,4 @@
+{% include 'adminheader.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <center>
-        <h1>VIEW FEEDBACK</h1>
-        <table>
-            <tr>
-                <th>review_id</th>
+    <center><br><br>
+        <h1>VIEW REVIEWS</h1><br>
+        <table border="2" class="table" style="width: 1200px;">
+            <tr style="background-color: rgb(0, 89, 255);">
+                
+                
                 <th>user_id</th>
                 <th>doctor_id</th>
                 <th>review</th>
@@ -20,7 +22,7 @@
             </tr>
            {% for i in data['user']%}
             <tr>
-                <td>{{i['review_id']}}</td>
+                
                 <td>{{i['user_id']}}</td>
                 <td>{{i['doctor_id']}}</td>
                 <td>{{i['review']}}</td>
@@ -38,3 +40,4 @@
         
 </body>
 </html>
+{% include 'footer.html' %}

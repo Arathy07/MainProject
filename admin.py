@@ -54,7 +54,7 @@ def diseasemanagement():
         uploadimage=request.form['image']
         qry1="insert into diseases values(null,'%s','%s','%s')"%(Diseasename, description,uploadimage)
         insert(qry1)
-        return '''<script>alert("Add successfull");window.locatioin="/registration"</script>'''
+        return '''<script>alert("Add successfull");window.location="/diseasemanaging"</script>'''
 
     if 'action'in request.args:
         action=request.args['action']
@@ -64,7 +64,7 @@ def diseasemanagement():
         if action=='delete':
             qry2="delete from diseases where disease_id='%s'"%(id)
             delete(qry2)
-            return '''<script>alert("Delection successfull");window.locatioin="/registration"</script>'''
+            return '''<script>alert("Delection successfull");window.location="/diseasemanaging"</script>'''
         if action=='update':
              qry6="select * from diseases where disease_id='%s'"%(id)
              data['up']=select(qry6)
@@ -74,7 +74,7 @@ def diseasemanagement():
                  uploadimage=request.form['image']
                  q="update diseases set disease_name='%s',description='%s',image='%s' where disease_id='%s'"%( Diseasename,description,uploadimage,id)
                  update(q)
-                 return '''<script>alert("update successfull");window.locatioin="/registration"</script>'''
+                 return '''<script>alert("update successfull");window.location="/diseasemanaging"</script>'''
                     
         
 
@@ -122,7 +122,7 @@ def symptommanagement():
         
         qry1="insert into symptom values(null,'%s','%s')"%(symptomname,description)
         insert(qry1)
-        return '''<script>alert("Add successfull");window.locatioin="/registration"</script>'''
+        return '''<script>alert("Add successfull");window.location="/symptommanagement"</script>'''
     
     if 'action'in request.args:
         action=request.args['action']
@@ -132,6 +132,7 @@ def symptommanagement():
         if action=='delete':
             qry2="delete from symptom where symptom_id='%s'"%(id)
             delete(qry2)
+            return '''<script>alert(" Delete successfull");window.location="/symptommanagement"</script>'''
 
         if action=='update':
              qry6="select * from symptom where symptom_id='%s'"%(id)
@@ -139,9 +140,9 @@ def symptommanagement():
              if 'update' in request.form:
                  sname=request.form['name']
                  description=request.form['des']
-                 q="update diseases set symptom_name='%s',symptom_description='%s' where symptom_id='%s'"%( sname,description,id)
+                 q="update symptom set symptom_name='%s',symptom_description='%s' where symptom_id='%s'"%( sname,description,id)
                  update(q)
-                 return '''<script>alert("update successfull");window.locatioin="/registration"</script>'''
+                 return '''<script>alert("update successfull");window.location="/symptommanagement"</script>'''
                     
     
     return render_template("symptom.html",data=data)

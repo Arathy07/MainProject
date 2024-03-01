@@ -1,3 +1,4 @@
+{%include 'adminheader.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <table border="2">
-        <tr>
+ <center>
+    <br><br>
+    <h1>DOCCTOR MANAGE</h1><br>
+    <table border="2" class="table" style="width: 1200px;">
+        <tr style="background-color: rgb(0, 89, 255);">
             <th>doctor_id</th>
             <th>fname</th>
             <th>lname</th>
@@ -16,6 +20,8 @@
             <th>phone</th>
             <th>designation</th>
             <th>status</th>
+            <th></th>
+            <th></th>
             
         </tr>
        {% for i in data['user']%}
@@ -28,13 +34,15 @@
             <td>{{i['phone']}}</td>
             <td>{{i['designation']}}</td>
             <td>{{i['status']}}</td>
-            <td><a href="?action=Approve&id={{i['login_id']}}">Approve</a></td>
-            <td><a href="?action=Reject&id={{i['login_id']}}">Reject</a></td>
+            <td><a href="?action=Approve&id={{i['login_id']}}" class="btn btn-success">Approve</a></td>
+            <td><a href="?action=Reject&id={{i['login_id']}}" class="btn btn-danger">Reject</a></td>
 
 
         </tr>
         {%endfor%}
     </table>
+ </center>
 </body>
 </body>
 </html>
+{% include 'footer.html' %}

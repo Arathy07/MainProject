@@ -59,55 +59,83 @@
 </body>
 </html>
  -->
+>
+ 
  <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <title>Responsive Registration Form</title>
+  <title> Registration Form</title>
 </head>
 
 <body>
-  <div class="container">
-    <div class="form">
-      <div class="heading">
-        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b6b9b111947483.600d77d8a07ed.gif" alt="" class="logo">
-        <h1>Registration Form</h1>
-      </div>
-      <div class="wrap">
-        <div class="f1">
-          <label>First Name</label>
-          <input type="text">
+  <form action="" method="post">
+    <div class="container">
+      <div class="form" >
+        <div class="heading">
+          <BR></BR><BR> </BR>
+          <!-- <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b6b9b111947483.600d77d8a07ed.gif" alt="" class="logo"> -->
+          <h1>Registration Form</h1>
+        </div>
+        <div class="wrap">
+          <div class="f1">
+            <label>First Name</label>
+            <input type="text" name="fname">
+            <span class="focus-input"></span>
+          </div>
+          <div class="f2">
+            <label>Second Name</label>
+            <input type="text" name="lname">
+            <span class="focus-input"></span>
+          </div>
+        </div>
+  
+        <div class="wrap">
+          <div class="f1">
+            <label>Place</label>
+            <input type="text" name="place">
+            <span class="focus-input"></span>
+          </div>
+          <div class="f2">
+            <label> E-Mail</label>
+            <input type="text" name="email">
+            <span class="focus-input"></span>
+          </div>
+        </div>
+      
+  
+        <div class="wrap2">
+          <label>Phone Number</label>
+          <input type="number" name="phone">
           <span class="focus-input"></span>
         </div>
-        <div class="f2">
-          <label>Second Name</label>
-          <input type="text">
+        <div class="wrap2">
+          <label>Designation</label>
+          <input type="text" name="designation">
           <span class="focus-input"></span>
         </div>
+  
+  
+  
+        <div class="wrap2">
+          <label>Username</label>
+          <input type="text" name="username">
+          <span class="focus-input"></span>
+        </div>
+        <div class="wrap2">
+          <label>Password</label>
+          <input type="password" name="password">
+          <span class="focus-input"></span>
+        </div>
+  
+  
+  
+  
+        <button class="btn" ><input type="submit" name="submit" value="Register"></button>
+  
       </div>
-
-      <div class="wrap2">
-        <label>Username</label>
-        <input type="text">
-        <span class="focus-input"></span>
-      </div>
-
-      <div class="wrap2">
-        <label>E-Mail</label>
-        <input type="text">
-        <span class="focus-input"></span>
-      </div>
-
-      <div class="wrap2">
-        <label>Phone Number</label>
-        <input type="number">
-        <span class="focus-input"></span>
-      </div>
-
-      <button class="btn">Register</button>
-
-    </div>
+  </form>
 
     <div class="image">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/28f133111947483.600bc9033b832.png" class="img" alt="">
@@ -164,6 +192,7 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100%;
+ 
   background: whitesmoke;
   padding-bottom: 50px;
 }
@@ -235,7 +264,7 @@ input {
   font-weight: 500;
   font-size: 1rem;
   border: none;
-  background: #445a94;
+  background: #3967e7;
   color: #fff;
   box-shadow: 8px 10px 30px rgba(0, 0, 0, 0.2);
   transition: 0.4s;
@@ -328,6 +357,6 @@ input[type="number"] {
 }
  */
 
-
+    
 </style>
   

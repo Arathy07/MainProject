@@ -1,3 +1,4 @@
+{% include 'adminheader.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body><center>
-    <h1>PATIENTS</h1>
-    <table>
-        <tr>
+<body><center><br><br>
+    <h1>PATIENTS</h1><br>
+    <table border="2" class="table" style="width: 1200px;">
+        <tr style="background-color: rgb(0, 89, 255);">
+        
             <th>patient_id</th>
             <th>fname</th>
             <th>lname</th>
@@ -39,3 +41,4 @@
     
 </body>
 </html>
+{% include 'footer.html' %}

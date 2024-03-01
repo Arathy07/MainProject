@@ -1,3 +1,4 @@
+{% include 'adminheader.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +7,22 @@
     <title>Document</title>
 </head>
 <body>
+    <center>
     {%if data['up']%}
 
     <h1>SYMPTOMS</h1>
-    <form action="" method="post">
+    <form action="" method="post" style="width: 900px;" class="form-control">
         <table>
             <tr>
                 <th>Symptoms name</th>
-                <td><input type="text" name="name" value="{{data['up'][0]['symptom_name']}}"></td>
+                <td><input type="text" class="form-control" name="name" value="{{data['up'][0]['symptom_name']}}"></td>
             </tr>
             <tr>
                 <th>description</th>
-                <td><textarea name="des" id="{{data['up'][0]['symptom_description']}}" cols="20" rows="10" ></textarea></td>
+                <td><textarea name="des" class="form-control" id="{{data['up'][0]['symptom_description']}}" cols="20" rows="10" ></textarea></td>
                 
             </tr>
+            <td align="center" colspan="2"><input type="submit" name="update" value="submit" class="btn btn-primary"></td>
         </table>
     </form>
 
@@ -30,26 +33,30 @@
     
     
     <h1>SYMPTOMS</h1>
-    <form action="" method="post">
+    <form action="" method="post" style="width: 900px;" class="form-control">
         <table>
             
         <tr>
             <th>SYMPTOM NAME</th>
-            <td><input type="text" name="name"></td>
+            <td><input type="text"class="form-control" name="name"></td>
             </tr>
     <tr>
         <th>DESCRIPTION</th>
-        <td><textarea name="des" id="" cols="20" rows="10"></textarea></td>
+        <td><textarea name="des" class="form-control" id="" cols="20" rows="10"></textarea></td>
        
     </tr>
-    <td align="center" colspan="2"><input type="submit" name="submit" value="submit"></td>
+    <td align="center" colspan="2"><input type="submit" name="submit" value="submit" class="btn btn-primary"></td>
     </table>
-    </form>
-    <table>
-        <tr>
-            <th>symptom_name</th>
-            <th>symptom_description</th>
-            
+    </form><br><br>
+
+
+
+    <table border="2" class="table" style="width: 900px;">
+        <tr style="background-color: rgb(0, 89, 255);">
+            <th>Symptom Name</th>
+            <th>Symptom Description</th>
+            <th></th>
+            <th></th>
             
             
         </tr>
@@ -57,14 +64,15 @@
         <tr>
             <td>{{i['symptom_name']}}</td>
             <td>{{i['symptom_description']}}</td>
-            <td><a href="?action=update&id={{i['symptom_id']}}">update</a></td>
-            <td><a href="?action=delete&id={{i['symptom_id']}}">Delete</a></td>
+            <td><a href="?action=update&id={{i['symptom_id']}}" class="btn btn-success">update</a></td>
+            <td><a href="?action=delete&id={{i['symptom_id']}}" class="btn btn-danger">Delete</a></td>
 
 
         </tr>
         {%endfor%}
     </table>
     {%endif%}
-
+</center>
 </body>
 </html>
+{% include 'footer.html' %}
