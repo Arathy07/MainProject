@@ -60,7 +60,36 @@
     <link href="static/css/style.css" rel="stylesheet">
 </head>
 
-<body  style="background-image: url('static/img/header-page.jpg');">
+
+    
+ <!-- <body  style="background-image: url('static/img/header-page.jpg');">  -->
+
+
+<style>
+
+@keyframes changeBackground {
+  0% {
+    background-image: url('static/img/header-page.jpg');
+  }
+  
+  66.66% {
+    background-image: url('https://i0.wp.com/bhskin.com/wp-content/uploads/2022/01/Dermatologist-1.jpg?fit=914%2C560&ssl=1');
+  }
+  100% {
+    background-image: url('https://www.completefamilydermatology.com/wp-content/uploads/2022/08/Depositphotos_117548300_S.jpg');
+  }
+}
+    body {
+        
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        animation: changeBackground 9s linear infinite;
+        
+    }
+</style>   
+   
+
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -146,19 +175,7 @@
 
 
   <style>
-  @keyframes changeBackground {
-  0% {
-    background-image: url('https://www.drdivyasharma.com/assets/blog/c24050c1e7630113f59846bd52138763.png');
-  }
   
-  66.66% {
-    background-image: url('https://i0.wp.com/bhskin.com/wp-content/uploads/2022/01/Dermatologist-1.jpg?fit=914%2C560&ssl=1');
-  }
-  100% {
-    background-image: url('https://www.completefamilydermatology.com/wp-content/uploads/2022/08/Depositphotos_117548300_S.jpg');
-  }
-}
-
 
 
 .form {
