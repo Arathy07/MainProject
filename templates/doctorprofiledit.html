@@ -7,38 +7,41 @@
     <title>Document</title>
 </head>
 <body>
+    <br><br>
+    <center>
      {%if data['up']%}
         <h1>EDIT PROFILE</h1>
-        <form action="" method="post">
+        <br><br>
+        <form action="" method="post"  style="width: 1200px;" class="form-control">
             <table>
                 <tr>
                     <th>FIRSTNAME</th>
-                    <td><input type="text" name="fname" value="{{data['up'][0]['fname']}}"></td>
+                    <td><input type="text" class="form-control" name="fname" value="{{data['up'][0]['fname']}}"></td>
                 </tr>
                 <tr>
                     <th>LASTNAME</th>
-                    <td><input type="text" name="lname" value="{{data['up'][0]['lname']}}"></td>
+                    <td><input type="text" class="form-control" name="lname" value="{{data['up'][0]['lname']}}"></td>
                 </tr>
                 <tr>
                     <th>PLACE</th>
-                    <td><input type="text" name="place" value="{{data['up'][0]['place']}}"></td>
+                    <td><input type="text" class="form-control" name="place" value="{{data['up'][0]['place']}}"></td>
                 </tr>
                 <tr>
                     <th>EMAIL</th>
-                    <td><input type="email" name="email" value="{{data['up'][0]['email']}}"></td>
+                    <td><input type="email" class="form-control" name="email" value="{{data['up'][0]['email']}}"></td>
                 </tr>
                 <tr>
                     <th>PHONE</th>
-                    <td><input type="number" name="phone" value="{{data['up'][0]['phone']}}"></td>
+                    <td><input type="number" class="form-control" name="phone" value="{{data['up'][0]['phone']}}"></td>
                 </tr>
                 <tr>
                     <th>Designation</th>
-                    <td><input type="number" name="designation" value="{{data['up'][0]['designation']}}"></td>
+                    <td><input type="text" class="form-control" name="designation" value="{{data['up'][0]['designation']}}"></td>
                 </tr>
 
 
                 <tr>
-                    <td align="center" colspan="2"><input type="submit" name="update" value="submit"></td>
+                    <td align="center" colspan="2"><input type="submit" name="update" value="submit" class="bth btn-primary"></td>
                 </tr>
             </table>
     
@@ -49,16 +52,18 @@
     
 
 
-   <h1>Doctor Profile</h1>
+   <h1>Doctor Profile</h1><br>
+   <table border="2" class="table" style="width: 1200px;">
+    <tr style="background-color: rgb(0, 89, 255);">
    
-   <table border="2">
-    <tr>
+   
         <th>fname</th>
         <th>lname</th>
         <th>place</th>
         <th>phone</th>
         <th>email</th>
         <th>designation</th>
+        <th></th>
         
 
         
@@ -72,7 +77,7 @@
         <td>{{i['phone']}}</td>
         <td>{{i['email']}}</td>
         <td>{{i['designation']}}</td>
-        <td><a href="?action=update&id={{i['doctor_id']}}">update</a></td>
+        <td><a href="?action=update&id={{i['doctor_id']}}" class="btn btn-primary">update</a></td>
         
 
         
@@ -88,6 +93,7 @@
     {%endfor%}
 </table>
 {%endif%}
+</center>
 </body>
 </html>
 {% include 'footer.html' %}

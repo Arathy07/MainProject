@@ -33,7 +33,7 @@ def editprofile():
 
                  q="update doctor set fname='%s',lname='%s',place='%s',email='%s',phone='%s',designation='%s'where doctor_id='%s'"%(fname,lname,place,email,phone,designation,id)
                  update(q)
-                 return '''<script>alert("update successfull");window.location="/registration"</script>'''
+                 return '''<script>alert("update successfull");window.location="/editprofile"</script>'''
 
 
    
@@ -69,7 +69,7 @@ def schedulemanagement():
         if action=='delete':
             qry2="delete from doctors_schedule where schedule_id='%s'"%(id)
             delete(qry2)
-            return '''<script>alert("Delection successfull");window.locatioin="/registration"</script>'''
+            return '''<script>alert("Delection successfull");window.location="/schedulemanagement"</script>'''
         if action=='update':
              qry6="select * from doctors_schedule where schedule_id='%s'"%(id)
              data['up']=select(qry6)
@@ -80,7 +80,7 @@ def schedulemanagement():
                  etime=request.form['endtime']
                  q="update doctors_schedule set startdate='%s',enddate='%s',starttime='%s',endtime='%s' where schedule_id='%s'"%(sdate,edate,stime,etime,id)
                  update(q)
-                 return '''<script>alert("update successfull");window.location="/registration"</script>'''
+                 return '''<script>alert("update successfull");window.location="/schedulemanagement"</script>'''
 
 
     return render_template("schedulemanagement.html",data=data)
@@ -105,7 +105,7 @@ def sendreview():
 
         qry1="insert into review values(null,'%s','%s','%s',CURDATE())"%(session['lid'],review,rateing)
         insert(qry1)
-        return ''' <script>alert("send successfully");window.location="/viewcomplaints"</script>'''
+        return ''' <script>alert("send successfully");window.location="/sendreview"</script>'''
 
 
     return render_template("sendreview.html")

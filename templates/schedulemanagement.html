@@ -6,28 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body><center><br><br>
+    
 
 
     {%if data['up']%}
     <h1>UPDATE SCHEDULE</h1>
-    <form action="" method="post">
+    <form action="" method="post" style="width: 900px;" class="form-control">
         <table>
             <tr>
                 <th>Start date</th>
-                <td><input type="text" name="startdate" value="{{data['up'][0]['disease_name']}}"></td>
+                <td><input type="date" class="form-control" name="startdate" value="{{data['up'][0]['disease_name']}}"></td>
             </tr>
             <tr>
                 <th>end date</th>
-                <td><input type="text" name="enddate" value="{{data['up'][0]['description']}}"></td>
+                <td><input type="date" class="form-control" name="enddate" value="{{data['up'][0]['description']}}"></td>
             </tr>
             <tr>
                 <th>start time</th>
-                <td><input type="file" name="starttime" value="{{data['up'][0]['image']}}"></td>
+                <td><input type="time" class="form-control" name="starttime" value="{{data['up'][0]['image']}}"></td>
             </tr>
             <tr>
                 <th>end time</th>
-                <td><input type="file" name="endtime" value="{{data['up'][0]['image']}}"></td>
+                <td><input type="time" class="form-control" name="endtime" value="{{data['up'][0]['image']}}"></td>
             </tr>
 
             <tr>
@@ -40,37 +41,39 @@
 
     {%else%}
 
-
-    <form action="" method="post">
+        <h1>DOCTOR SCHEDULE</h1>
+    <form action="" method="post" style="width: 900px;" class="form-control">
         <table>
            <tr>
                 <th>DATE</th>
-                <td><input type="date" name="startdate"></td>
+                <td><input type="date" class="form-control" name="startdate"></td>
             </tr>
             <tr>
                 <th>DATE</th>
-                <td><input type="date" name="enddate"></td>
+                <td><input type="date" class="form-control" name="enddate"></td>
             </tr>
             <tr>
                 <th>TIME</th>
-                <td><input type="time" name="starttime"></td>
+                <td><input type="time" class="form-control" name="starttime"></td>
             </tr>
             <tr>
                 <th>TIME</th>
-                <td><input type="time" name="endtime"></td>
+                <td><input type="time" class="form-control" name="endtime"></td>
             </tr>
             <tr>
-                <td align="center" colspan="2"><input type="submit" name="submit" value="submit"></td>
+                <td align="center" colspan="2"><input type="submit" name="submit" value="submit" class="btn btn-primary"></td>
             </tr>
 
     </table>
     </form>
-    <table>
-        <tr>
+    <table border="2" class="table" style="width: 1200px;">
+        <tr style="background-color: rgb(0, 89, 255);">
             <th>startdate</th>
             <th>enddate</th>
             <th>starttime</th>
             <th>endtime</th>
+            <th></th>
+            <th></th>
             
             
         </tr>
@@ -80,14 +83,15 @@
             <td>{{i['enddate']}}</td>
             <td>{{i['starttime']}}</td>
             <td>{{i['endtime']}}</td>
-            <td><a href="?action=update&id={{i['schedule_id']}}">Reschedule</a></td>
-            <td><a href="?action=delete&id={{i['schedule_id']}}">Delete</a></td>
+            <td><a href="?action=update&id={{i['schedule_id']}}"  class="btn btn-success">Reschedule</a></td>
+            <td><a href="?action=delete&id={{i['schedule_id']}}" class="btn btn-danger">Delete</a></td>
 
 
         </tr>
         {%endfor%}
     </table>
-    {%endif%}      
+    {%endif%}    
+</center>  
 </body>
 </html>
 {% include 'footer.html' %}

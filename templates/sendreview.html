@@ -6,22 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body><h1>SEND REVIEW</h1>
-    <form action="" method="post">
+<body>
+    <center>
+        <br><br><h1>SEND REVIEW</h1><br>
+    <form action="" method="post" style="width: 900px;" class="form-control">
     <table>
         
     <tr>
         <th>Review</th>
-    <td><textarea name="des" id="" cols="20" rows="10"></textarea></td>
+    <td><textarea name="des"  class="form-control" id="" cols="20" rows="10"></textarea></td>
         </tr>
 <tr>
     <th>Rateing</th>
-    <td><input type="number" name="rateing"></td>
+    <td><input type="number" class="form-control" name="rateing"></td>
 </tr>
-<td align="center" colspan="2"><input type="submit" name="submit" value="submit"></td>
+<td align="center" colspan="2"><input type="submit" name="submit" value="submit" class="btn btn-primary"></td>
 
 </table>
 </form>
+</center>
 </body>
 </html>
 {% include 'footer.html' %}
