@@ -23,6 +23,7 @@ def login():
             x="select * from doctor where login_id='%s'"%(session['lid'])
             doc=select(x)
             session['did']=doc[0]['doctor_id']
+            
             return redirect(url_for('doctor.doctorhome'))
         
     return render_template("login.html")
